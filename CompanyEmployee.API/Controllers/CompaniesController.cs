@@ -5,6 +5,7 @@ using CompanyEmployee.Entities.Models;
 using CompanyEmployee.Entities.Models.DTOS;
 using CompanyEmployee.LoggerService;
 using CompanyEmployee.Repository.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace CompanyEmployee.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetCompanies"), Authorize]
         public async Task<IActionResult> GetCompanies()
         {
             var companies = await _unitOfWork.Company.GetAllCompaniesAsync(trackChanges: false);

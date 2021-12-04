@@ -43,7 +43,7 @@ namespace CompanyEmployee.API.Controllers
 
             await _userManager.AddToRolesAsync(user, userForRegistration.Roles);
 
-            return StatusCode(201);
+            return StatusCode(201); 
         }
     }
 }

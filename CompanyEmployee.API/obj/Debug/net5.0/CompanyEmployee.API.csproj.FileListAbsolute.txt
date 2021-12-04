@@ -227,3 +227,4 @@ C:\Users\USER\source\repos\CompanyEmployee.API\CompanyEmployee.API\obj\Debug\net
 C:\Users\USER\source\repos\CompanyEmployee.API\CompanyEmployee.API\obj\Debug\net5.0\CompanyEmployee.API.pdb
 C:\Users\USER\source\repos\CompanyEmployee.API\CompanyEmployee.API\obj\Debug\net5.0\CompanyEmployee.API.genruntimeconfig.cache
 C:\Users\USER\source\repos\CompanyEmployee.API\CompanyEmployee.API\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\USER\source\repos\CompanyEmployee.API\CompanyEmployee.API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
