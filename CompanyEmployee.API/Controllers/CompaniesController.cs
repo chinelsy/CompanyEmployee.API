@@ -29,7 +29,7 @@ namespace CompanyEmployee.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet(Name = "GetCompanies"), Authorize]
+        [HttpGet(Name = "GetCompanies"), Authorize(Roles = "Manager")]
         public async Task<IActionResult> GetCompanies()
         {
             var companies = await _unitOfWork.Company.GetAllCompaniesAsync(trackChanges: false);

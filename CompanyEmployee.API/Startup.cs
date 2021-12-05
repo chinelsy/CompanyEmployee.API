@@ -1,6 +1,8 @@
 using CompanyEmployee.API.ActionFilters;
 using CompanyEmployee.API.Extensions;
 using CompanyEmployee.LoggerService;
+using CompanyEmployee.Repository.Implementation;
+using CompanyEmployee.Repository.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -36,9 +38,10 @@ namespace CompanyEmployee.API
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped<ValidationFilterAttribute>();
             services.AddScoped<ValidateCompanyExistsAttribute>();
-            services.AddAuthentication(); 
+            services.AddAuthentication();
             services.ConfigureIdentity();
             services.ConfigureJWT(Configuration);
+            services.AddScoped<IAuthenticationManager, AuthenticationManager>();
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
@@ -82,7 +85,7 @@ namespace CompanyEmployee.API
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers(); 
+                endpoints.MapControllers();
             });
 
         }
